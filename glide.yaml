@@ -1,0 +1,75 @@
+package: .
+import:
+- package: cloud.google.com/go
+  version: v0.34.0
+  subpackages:
+  - compute/metadata
+  - storage
+- package: github.com/Azure/go-autorest
+  version: v11.1.2
+  subpackages:
+  - autorest
+  - autorest/adal
+  - autorest/azure
+- package: github.com/docopt/docopt-go
+  version: 0.6.2
+- package: github.com/go-logr/logr
+  version: v0.4.0
+- package: github.com/golang/glog
+- package: github.com/golang/groupcache
+  subpackages:
+  - lru
+- package: github.com/google/uuid
+  version: v1.2.0
+- package: github.com/gophercloud/gophercloud
+  version: c818fa66e4c8
+  subpackages:
+  - openstack
+- package: github.com/gorilla/websocket
+  version: v1.4.2
+- package: github.com/gregjones/httpcache
+  subpackages:
+  - diskcache
+- package: github.com/jessevdk/go-flags
+  version: v1.5.0
+- package: github.com/mxk/go-flowrate
+  subpackages:
+  - flowrate
+- package: github.com/peterbourgon/diskv
+  version: v2.0.1
+- package: go4.org
+  subpackages:
+  - syncutil/singleflight
+- package: golang.org/x/build
+  subpackages:
+  - autocertcache
+- package: golang.org/x/sync
+  subpackages:
+  - errgroup
+- package: google.golang.org/appengine
+  version: v1.5.0
+  subpackages:
+  - urlfetch
+- package: k8s.io/apiextensions-apiserver
+  version: v0.15.7
+  subpackages:
+  - pkg/apis/apiextensions/v1beta1
+  - pkg/client/clientset/clientset
+- package: k8s.io/kube-openapi
+  subpackages:
+  - pkg/util/proto
+testImport:
+- package: github.com/bitly/go-hostpool
+  version: v0.1.0
+- package: github.com/bmizerany/assert
+- package: github.com/elazarl/goproxy
+  version: v1.1
+- package: github.com/spf13/afero
+  version: v1.6.0
+- package: github.com/stretchr/testify
+  version: v1.7.0
+  subpackages:
+  - assert
+  - require
+- package: gopkg.in/check.v1
+

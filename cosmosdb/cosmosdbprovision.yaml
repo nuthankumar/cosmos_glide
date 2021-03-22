@@ -1,0 +1,13 @@
+apiVersion: dbprovision.com/v1
+kind: DBProvisioning
+metadata:
+  name: dummy
+  namespace: dummy
+spec:
+  hello: nuthan
+  clientid: ccsddd
+  clientns: ccs-paas
+  keyspacename: utssllll
+  rolename: gt
+  servicename: nutservice
+  username: nuthanuser
