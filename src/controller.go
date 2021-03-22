@@ -2,8 +2,8 @@ package main
 
 import (
         opkit "github.com/rook/operator-kit"
-        sample "cosmosdb/pkg/apis/dbprovision/v1"
-        sampleclient "cosmosdb/pkg/client/clientset/versioned/typed/dbprovision/v1"
+        sample "github.com/nuthankumar/cosmosdb/pkg/apis/dbprovision/v1"
+        sampleclient "github.com/nuthankumar/cosmosdb/pkg/client/clientset/versioned/typed/dbprovision/v1"
         "k8s.io/client-go/kubernetes"
         "k8s.io/client-go/tools/cache"
 )

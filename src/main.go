@@ -25,8 +25,8 @@ import (
         "syscall"
         "time"
         opkit "github.com/rook/operator-kit"
-        sample "cosmosdb/pkg/apis/dbprovision/v1"
-        sampleclient "cosmosdb/pkg/client/clientset/versioned/typed/dbprovision/v1"
+        sample "github.com/nuthankumar/cosmosdb/pkg/apis/dbprovision/v1"
+        sampleclient "github.com/nuthankumar/cosmosdb/pkg/client/clientset/versioned/typed/dbprovision/v1"
         "k8s.io/api/core/v1"
         apiextensionsclient "k8s.io/apiextensions-apiserver/pkg/client/clientset/clientset"
         "k8s.io/client-go/kubernetes"
@@ -69,6 +69,7 @@ func main() {
 
         // start watching the sample resource
         fmt.Println("Watching the sample resource")
+        fmt.Println(sampleClientset)
         controller := newSampleController(context, sampleClientset, clientset)
         controller.StartWatch(v1.NamespaceAll, stopChan)
 

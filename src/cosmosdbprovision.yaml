@@ -5,7 +5,7 @@ metadata:
   namespace: dummy
 spec:
   hello: nuthan
-  clientid: ccsddd
+  clientid: ccsmk
   clientns: ccs-paas
   keyspacename: utssllll
   rolename: gt
