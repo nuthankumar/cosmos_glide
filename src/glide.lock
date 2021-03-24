@@ -1,5 +1,5 @@
 hash: 81c104a363dcf3a88c92213bf60fe8e32861f59ac8205a1f659842f56f0ed518
-updated: 2021-03-22T17:39:32.820471791Z
+updated: 2021-03-24T16:16:40.2092628+05:30
 imports:
 - name: cloud.google.com/go
   version: 0ebda48a7f143b1cce9eb37a8c1106ac762a3430
@@ -20,6 +20,12 @@ imports:
   version: 784ddc588536785e7299f7272f39101f7faccc3f
 - name: github.com/go-logr/logr
   version: 8fc6c73f3911f11de3d0c18ade9880f1114ae72f
+- name: github.com/gocql/gocql
+  version: 5be2641c68cbe07702e14f921c5092e0cb7111e4
+  subpackages:
+  - internal/lru
+  - internal/murmur
+  - internal/streams
 - name: github.com/gogo/protobuf
   version: 342cbe0a04158f6dcb03ca0079991a51a4248c02
   subpackages:
@@ -39,6 +45,8 @@ imports:
   - ptypes/any
   - ptypes/duration
   - ptypes/timestamp
+- name: github.com/golang/snappy
+  version: 674baa8c7fc30da5df3074a459494a7e6b427dff
 - name: github.com/google/go-cmp
   version: 6f77996f0c42f7b84e5a2b252227263f93432e9b
   subpackages:
@@ -67,6 +75,8 @@ imports:
   version: 901d90724c7919163f472a9812253fb26761123d
   subpackages:
   - diskcache
+- name: github.com/hailocab/go-hostpool
+  version: e80d13ce29ede4452c43dea11e79b9bc8a15b478
 - name: github.com/hashicorp/golang-lru
   version: 20f1fb78b0740ba8c3cb143a61e86ba5c8669768
   subpackages:
@@ -85,6 +95,10 @@ imports:
   version: cca7078d478f8520f85629ad7c68962d31ed7682
   subpackages:
   - flowrate
+- name: github.com/nuthankumar/az_cosmos_cassandra
+  version: 54e8b8ef903f999d0946881d8c634fa1aadf2bcd
+  subpackages:
+  - utils
 - name: github.com/nuthankumar/cosmosdb
   version: 67457386f9660b71fd5dedd7ab7b5a37e10681c7
   subpackages:
@@ -327,17 +341,17 @@ imports:
   version: fd68e9863619f6ec2fdd8625fe1f02e7c877e480
 testImports:
 - name: github.com/bitly/go-hostpool
-  version: ""
+  version: 5d3b4dc6ed4701a761ee884fd803b0a0879744f1
 - name: github.com/bmizerany/assert
-  version: ""
+  version: b7ed37b82869576c289d7d97fb2bbd8b64a0cb28
 - name: github.com/elazarl/goproxy
-  version: ""
+  version: 947c36da3153ff334e74d9d980de341d25f358ba
 - name: github.com/spf13/afero
-  version: ""
+  version: bc94f58beda5dbff6f74599fcb1f1717c5b1c111
 - name: github.com/stretchr/testify
-  version: ""
+  version: acba37e5db06f0093b465a7d47822bf13644b66c
   subpackages:
   - assert
   - require
 - name: gopkg.in/check.v1
-  version: ""
+  version: 10cb98267c6cb43ea9cd6793f29ff4089c306974

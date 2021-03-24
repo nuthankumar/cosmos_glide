@@ -7,7 +7,7 @@ spec:
   hello: nuthan
   clientid: ccsmk
   clientns: ccs-paas
-  keyspacename: utssllll
+  keyspacename: utssllll1
   rolename: gt
   servicename: nutservice
   username: nuthanuser
