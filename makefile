@@ -4,16 +4,16 @@ GLIDE=$(shell which glide)
 GLIDEUP=$(GLIDE) up --skip-test
 GLIDEINSTALL=$(GLIDE) install
 GOINSTALL=$(GO) install
-GOBUILD=$(GO) build  -o ./bin/ccspaas_crd ./pkg/controller/*.go
-GORUN=$(GO) run *.go
+GOBUILD=$(GO) build  -o ./bin/cosmos_crd ./src/*.go
+GORUN=$(GO) run src/*.go
 GOCLEAN=$(GO) clean
 GOGET=$(GO) get -v
 DOCKER=$(shell which docker)
-DOCKERBUILD=$(DOCKER) build --build-arg HTTP_PROXY=http://3.20.109.241:88 --build-arg HTTPS_PROXY=http://3.20.109.241:88 -t hc-eu-west-aws-artifactory.cloud.health.ge.com/docker-snapshot-clinical-care-app/ccs-paas/scylla-crd:latest .
+DOCKERBUILD=$(DOCKER) build --build-arg HTTP_PROXY=http://3.20.109.241:88 --build-arg HTTPS_PROXY=http://3.20.109.241:88 -t hc-eu-west-aws-artifactory.cloud.health.ge.com/docker-snapshot-clinical-care-app/ccs-paas/cosmos:v1 .
 DOCKERPUSH=$(DOCKER) push hc-eu-west-aws-artifactory.cloud.health.ge.com/docker-snapshot-clinical-care-app/ccs-paas/scylla-crd:latest
 
-export GOPATH=$(CURDIR)
-export GOBIN=$(CURDIR)/bin
+export GOPATH=$(CURDIR)/../../
+export GOBIN=$(CURDIR)/../../bin
 export KUBECONFIG=/root/.kube/config
 
 shell:
