@@ -47,7 +47,7 @@ import:
   subpackages:
   - errgroup
 - package: google.golang.org/appengine
-  version: v1.5.0
+  version: v1.4.0
   subpackages:
   - urlfetch
 - package: k8s.io/apiextensions-apiserver
@@ -72,4 +72,3 @@ testImport:
   - assert
   - require
 - package: gopkg.in/check.v1
-

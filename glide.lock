@@ -1,5 +1,5 @@
-hash: 81c104a363dcf3a88c92213bf60fe8e32861f59ac8205a1f659842f56f0ed518
-updated: 2021-03-29T18:54:03.8676095+05:30
+hash: c0ffbc04c5268b7acb70bd89acefafe44c9b3224f40986448e82255d154fec51
+updated: 2021-03-31T01:10:16.3710159+05:30
 imports:
 - name: cloud.google.com/go
   version: 0ebda48a7f143b1cce9eb37a8c1106ac762a3430
@@ -96,13 +96,12 @@ imports:
   subpackages:
   - flowrate
 - name: github.com/nuthankumar/az_cosmos_cassandra
-  version: 54e8b8ef903f999d0946881d8c634fa1aadf2bcd
+  version: 567d218767ff0f8d9c32aca55638e655357e8149
   subpackages:
-  - model
   - operations
   - utils
 - name: github.com/nuthankumar/cosmosdb
-  version: 67457386f9660b71fd5dedd7ab7b5a37e10681c7
+  version: ba501a9fb3fe731c7eeed4311704cdb81149d7a6
   subpackages:
   - pkg/apis/dbprovision/v1
   - pkg/client/clientset/versioned/scheme
@@ -159,7 +158,7 @@ imports:
   subpackages:
   - rate
 - name: google.golang.org/appengine
-  version: 54a98f90d1c46b7731eb8fb305d2a321c30ef610
+  version: e9657d882bb81064595ca3b56cbe2546bbabf7b1
   subpackages:
   - internal
   - internal/base
@@ -343,17 +342,17 @@ imports:
   version: fd68e9863619f6ec2fdd8625fe1f02e7c877e480
 testImports:
 - name: github.com/bitly/go-hostpool
-  version: ""
+  version: 5d3b4dc6ed4701a761ee884fd803b0a0879744f1
 - name: github.com/bmizerany/assert
-  version: ""
+  version: b7ed37b82869576c289d7d97fb2bbd8b64a0cb28
 - name: github.com/elazarl/goproxy
-  version: ""
+  version: 947c36da3153ff334e74d9d980de341d25f358ba
 - name: github.com/spf13/afero
-  version: ""
+  version: bc94f58beda5dbff6f74599fcb1f1717c5b1c111
 - name: github.com/stretchr/testify
-  version: ""
+  version: acba37e5db06f0093b465a7d47822bf13644b66c
   subpackages:
   - assert
   - require
 - name: gopkg.in/check.v1
-  version: ""
+  version: 10cb98267c6cb43ea9cd6793f29ff4089c306974
