@@ -77,16 +77,18 @@ func (c *SampleController) onUpdate(oldObj, newObj interface{}) {
 	if valid {
 		session := utils.GetSession(cosmosCassandraContactPoint, cosmosCassandraPort, cosmosCassandraUser, cosmosCassandraPassword)
 		defer session.Close()
-		log.Println("Connected to Azure Cosmos DB")
+		log.Println("Nothing to do on update")
 	}
 }
 
 func (c *SampleController) onDelete(obj interface{}) {
 	data := obj.(*sample.DBProvisioning).DeepCopy()
 	valid := utils.ValidateClientSession(data.Spec.CosmosCassandraContactPoint, cosmosCassandraContactPoint, data.Spec.CosmosCassandraPassword, cosmosCassandraPassword)
-	if valid {
+	crd_valid := utils.ValidateCrd(data)
+	if valid && crd_valid {
 		session := utils.GetSession(cosmosCassandraContactPoint, cosmosCassandraPort, cosmosCassandraUser, cosmosCassandraPassword)
 		defer session.Close()
 		log.Println("Connected to Azure Cosmos DB")
+		operations.DeleteCRD(data, session, data.Spec.Keyspace, data.Spec.ClientID, c.clientset)
 	}
 }
