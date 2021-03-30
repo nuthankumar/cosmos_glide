@@ -33,7 +33,7 @@ func init() {
 	cosmosCassandraUser = os.Getenv("COSMOSDB_CASSANDRA_USER")
 	cosmosCassandraPassword = os.Getenv("COSMOSDB_CASSANDRA_PASSWORD")
 
-	if cosmosCassandraContactPoint == "" || cosmosCassandraUser == "" || cosmosCassandraPassword == "" {
+	if cosmosCassandraContactPoint == "" || cosmosCassandraUser == "" || cosmosCassandraPassword == "" || cosmosCassandraPort == "" {
 		log.Fatal("missing mandatory environment variables")
 	}
 }
@@ -60,26 +60,33 @@ func (c *SampleController) StartWatch(namespace string, stopCh chan struct{}) er
 
 func (c *SampleController) onAdd(obj interface{}) {
 	data := obj.(*sample.DBProvisioning).DeepCopy()
-	session := utils.GetSession(cosmosCassandraContactPoint, cosmosCassandraPort, cosmosCassandraUser, cosmosCassandraPassword)
-	defer session.Close()
-	log.Println("Connected to Azure Cosmos DB")
-	operations.CreateKeySpace(data.Spec.Keyspacename, session)
+	valid := utils.ValidateClientSession(data.Spec.CosmosCassandraContactPoint, cosmosCassandraContactPoint, data.Spec.CosmosCassandraPassword, cosmosCassandraPassword)
+	crd_valid := utils.ValidateCrd(data)
+	if valid && crd_valid {
+		session := utils.GetSession(cosmosCassandraContactPoint, cosmosCassandraPort, cosmosCassandraUser, cosmosCassandraPassword)
+		defer session.Close()
+		log.Println("Connected to Azure Cosmos DB")
+		operations.CreateCRD(data, session, c.clientset)
+	}
 }
 
 func (c *SampleController) onUpdate(oldObj, newObj interface{}) {
 	data := oldObj.(*sample.DBProvisioning).DeepCopy()
 	newdata := newObj.(*sample.DBProvisioning).DeepCopy()
-	session := utils.GetSession(cosmosCassandraContactPoint, cosmosCassandraPort, cosmosCassandraUser, cosmosCassandraPassword)
-	defer session.Close()
-	log.Println("Connected to Azure Cosmos DB")
-	operations.DropKeySpaceIfExists(data.Spec.Keyspacename, session)
-	operations.CreateKeySpace(newdata.Spec.Keyspacename, session)
+	valid := utils.ValidateClientSession(data.Spec.CosmosCassandraContactPoint, newdata.Spec.CosmosCassandraContactPoint, data.Spec.CosmosCassandraPassword, newdata.Spec.CosmosCassandraPassword)
+	if valid {
+		session := utils.GetSession(cosmosCassandraContactPoint, cosmosCassandraPort, cosmosCassandraUser, cosmosCassandraPassword)
+		defer session.Close()
+		log.Println("Connected to Azure Cosmos DB")
+	}
 }
 
 func (c *SampleController) onDelete(obj interface{}) {
 	data := obj.(*sample.DBProvisioning).DeepCopy()
-	session := utils.GetSession(cosmosCassandraContactPoint, cosmosCassandraPort, cosmosCassandraUser, cosmosCassandraPassword)
-	defer session.Close()
-	log.Println("Connected to Azure Cosmos DB")
-	operations.DropKeySpaceIfExists(data.Spec.Keyspacename, session)
+	valid := utils.ValidateClientSession(data.Spec.CosmosCassandraContactPoint, cosmosCassandraContactPoint, data.Spec.CosmosCassandraPassword, cosmosCassandraPassword)
+	if valid {
+		session := utils.GetSession(cosmosCassandraContactPoint, cosmosCassandraPort, cosmosCassandraUser, cosmosCassandraPassword)
+		defer session.Close()
+		log.Println("Connected to Azure Cosmos DB")
+	}
 }

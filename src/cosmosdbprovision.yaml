@@ -4,10 +4,17 @@ metadata:
   name: dummy
   namespace: dummy
 spec:
-  hello: nuthan
-  clientid: ccsmk
+  clientid: ccsm1
   clientns: ccs-paas
-  keyspacename: utssllll1
-  rolename: gt
-  servicename: nutservice
-  username: nuthanuser
+  keyspacename: utss5
+  datacenter: ccs
+  keyspacetopology: NetworkTopologyStrategy
+  replicationfactor: "3"
+  rolename: rt1
+  createschema: y
+  configmapname: scyllascripts 
+  schemascriptname: utss_schema.cql
+  defaultvaluescriptname: schema_inserts.cql
+  cassandracontactpoint: devreli-mural-cassandraapi.cassandra.cosmos.azure.com
+  cassandrapassword: DuRc9VRVJ490PSs2jmjm9hMYuRVE30QDQMnYXBZ5RzjtlOmQY4OnUEPAz6J4iGy420ZjTZ1MCTb8dTprV3EYhg==
+
