@@ -10,7 +10,7 @@ GOCLEAN=$(GO) clean
 GOGET=$(GO) get -v
 DOCKER=$(shell which docker)
 DOCKERBUILD=$(DOCKER) build --build-arg HTTP_PROXY=http://3.20.109.241:88 --build-arg HTTPS_PROXY=http://3.20.109.241:88 -t hc-eu-west-aws-artifactory.cloud.health.ge.com/docker-snapshot-clinical-care-app/ccs-paas/cosmos:v1 .
-DOCKERPUSH=$(DOCKER) push hc-eu-west-aws-artifactory.cloud.health.ge.com/docker-snapshot-clinical-care-app/ccs-paas/scylla-crd:latest
+DOCKERPUSH=$(DOCKER) push hc-eu-west-aws-artifactory.cloud.health.ge.com/docker-snapshot-clinical-care-app/ccs-paas/cosmos:v1
 
 export GOPATH=$(CURDIR)/../../
 export GOBIN=$(CURDIR)/../../bin
