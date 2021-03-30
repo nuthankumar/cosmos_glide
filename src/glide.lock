@@ -96,7 +96,7 @@ imports:
   subpackages:
   - flowrate
 - name: github.com/nuthankumar/az_cosmos_cassandra
-  version: 567d218767ff0f8d9c32aca55638e655357e8149
+  version: 4dfc460ffe7bc47f4c174474616c6ea0e00efe27
   subpackages:
   - operations
   - utils
