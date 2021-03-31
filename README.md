@@ -1,4 +1,7 @@
 # cosmosdb
+
+NOTE: Has been not updated for a while.
+
 vi ~/.bash_profile
 export PATH=$PATH:/usr/local/go/bin
 export GOBIN="$HOME/go_projects/bin"

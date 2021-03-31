@@ -39,9 +39,9 @@ var (
 	kubeconfig string
 )
 
-func init() {
-	flag.StringVar(&kubeconfig, "kubeconfig", "/mnt/c/Users/212770199/.kube/config", "Path to KUBECONFIG for running out of cluster. (Default: null)")
-}
+// func init() {
+// 	flag.StringVar(&kubeconfig, "kubeconfig", "/mnt/c/Users/212770199/.kube/config", "Path to KUBECONFIG for running out of cluster. (Default: null)")
+// }
 
 func main() {
 	flag.Parse()
